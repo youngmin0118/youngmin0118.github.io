@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>미국 추수감사절</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: linear-gradient(135deg, #000000 0%, #1a1a40 100%);
+    font-family: "맑은 고딕";
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .fixed-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    padding: 20px;
+    background: linear-gradient(145deg, #2d2d5a 0%, #42428a 100%);
+    border-right: 2px solid #4a4a8f;
+    z-index: 10;
+  }
+
+  .fixed-group {
+    display: grid;
+    gap: 15px;
+  }
+
+  .notice a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+  }
+  .notice a:hover {
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+
+  .main-content {
+    margin-left: 300px;
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .thanksgiving-card-layout {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    gap: 38px;
+    align-items: stretch;
+    background: none;
+  }
+
+  .card-list {
+    flex: 1.4;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.10);
+    border: 1px solid #5a5a9f;
+    padding: 32px 28px;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    min-height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .card-title {
+    font-weight: bold;
+    color: #ffd700;
+    margin-bottom: 4px;
+    font-size: 1.15em;
+  }
+  .card-desc {
+    color: #f0f0f0;
+    font-size: 1em;
+    line-height: 1.6;
+  }
+  
+  .right-photo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 230px;
+    max-width: 400px;
+  }
+  .right-photo img {
+    width: 100%;
+    height: 100%;
+    max-width: 480px;
+    min-width: 300px;
+    min-height: 550px;
+    max-height: 700px;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+    background: #222;
+    border-radius: 0;
+  }
+
+  @media (max-width: 768px)
+  {
+    .fixed-sidebar
+    {
+      position: static;
+      width: 100%;
+      height: auto;
+      border-right: none;
+      border-bottom: 2px solid #4a4a8f;
+      z-index: 1;
+    }
+
+    .main-content
+    {
+      margin-left: 0;
+      padding: 20px;
+    }
+
+    .thanksgiving-card-layout
+    {
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .right-photo
+    {
+      max-width: 100%;
+      min-width: 0;
+      justify-content: center;
+      margin-top: 24px;
+    }
+    .right-photo img
+    {
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
+      min-height: 180px;
+      max-height: 320px;
+      height: auto;
+      object-fit: cover; /*사진이 커서 잘라서 화면에 맞게 표시*/
+    }
+  }
+
+</style>
+</head>
+<body>
+  <div class="fixed-sidebar">
+    <div class="fixed-group">
+      <article class="notice home-link"><a href="index.html">홈</a></article>
+      <article class="notice"><a href="#">공지사항</a></article>
+      <article class="notice"><a href="#">최신소식</a></article>
+      <article class="notice"><a href="#">인스타그램</a></article>
+      <article class="notice"><a href="#">이벤트 및 알림</a></article>
+      <article class="notice"><a href="#">회사소개</a></article>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="thanksgiving-card-layout">
+      <div class="card-list">
+        <div class="card">
+          <div class="card-title">추수감사절의 유래</div>
+          <div class="card-desc">1621년 미국 플리머스에서 첫 추수감사절이 열렸으며, 이민자와 원주민이 함께 수확을 축하했습니다.</div>
+        </div>
+        <div class="card">
+          <div class="card-title">대표 풍습</div>
+          <div class="card-desc">가족과 친지가 모여 칠면조 요리를 먹으며, 감사의 마음을 나누는 전통이 이어집니다.</div>
+        </div>
+        <div class="card">
+          <div class="card-title">현대의 의미</div>
+          <div class="card-desc">추수감사절은 매년 11월 넷째 목요일에 지키며, 나눔과 화합, 감사의 가치를 되새기는 날입니다.</div>
+        </div>
+        <div class="card">
+          <div class="card-title">블랙프라이데이</div>
+          <div class="card-desc">추수감사절 다음 날은 미국 최대의 쇼핑 행사인 블랙프라이데이로 이어집니다.</div>
+        </div>
+      </div>
+      <div class="right-photo">
+        <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODExMjJfMjk4%2FMDAxNTQyODUzNTkxNTQw.i29NIi5Pr0G6IadxMI0x59_KQCZqNAGfys8soM2MVRUg.4IhPs2l7I89OkqaOaztchuazNO5HBSsyQ-bTeHADdoAg.JPEG.yunuya3%2FKhan_family_thanksgiving_cjf.jpg&type=a340">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

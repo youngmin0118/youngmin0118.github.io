@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>일본 오쇼가츠(お正月) 이야기</title>
+<style>
+  * 
+  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body 
+  {
+    background: linear-gradient(135deg, #000000 0%, #1a1a40 100%);
+    font-family: '맑은 고딕', sans-serif;
+    color: white;
+    min-height: 100vh;
+  }
+
+  .fixed-sidebar 
+  {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    padding: 20px;
+    background: linear-gradient(145deg, #2d2d5a 0%, #42428a 100%);
+    border-right: 2px solid #4a4a8f;
+    z-index: 10;
+  }
+
+  .fixed-group 
+  {
+    display: grid;
+    gap: 15px;
+  }
+
+  .notice a 
+  {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    transform-origin: left center;
+  }
+
+  .notice a:hover 
+  {
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+
+  .main-content 
+  {
+    margin-left: 300px;
+    padding: 30px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .story-title 
+  {
+    font-size: 2.1em;
+    font-weight: bold;
+    color: #ffd700;
+    margin-bottom: 24px;
+    text-align: center;
+    letter-spacing: 2px;
+    width: 100%;
+  }
+
+  .story-container 
+  {
+    display: flex;
+    gap: 40px;
+    max-width: 950px;
+    margin: 0 auto;
+  }
+
+  .story-images 
+  {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-end;
+    justify-content: center;
+    flex: 0 0 200px;
+    position: relative;
+  }
+
+  .story-img 
+  {
+    width: 180px;
+    height: 120px;
+    overflow: hidden;
+    background: #222;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    position: relative;
+    left: 0;
+    transition: left 0.3s;
+  }
+
+  .story-img:nth-child(2) 
+  {
+    left: 20px;
+  }
+
+  .story-img:nth-child(3) 
+  {
+    left: 40px;
+  }
+
+  .story-img:nth-child(4) 
+  {
+    left: 60px;
+  }
+
+  .story-img img 
+  {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+  }
+
+  .story-steps 
+  {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    justify-content: center;
+  }
+
+  .story-step 
+  {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid #5a5a9f;
+    padding: 22px 28px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: relative;
+    width: 80%;
+    min-height: 80px;
+  }
+
+  .story-step:nth-child(1) 
+  {
+    margin-left: 0;
+  }
+
+  .story-step:nth-child(2) 
+  {
+    margin-left: 20%;
+  }
+
+  .story-step:nth-child(3) 
+  {
+    margin-left: 40%;
+  }
+
+  .story-step:nth-child(4) 
+  {
+    margin-left: 60%;
+  }
+
+  .story-step-title 
+  {
+    font-weight: bold;
+    color: #ffd700;
+    font-size: 1.18em;
+    margin-bottom: 4px;
+  }
+
+  .story-step-desc 
+  {
+    color: #f0f0f0;
+    font-size: 1.05em;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px)
+  {
+    .fixed-sidebar
+    {
+      position: static;
+      width: 100%;
+      height: auto;
+      border-right: none;
+      border-bottom: 2px solid #4a4a8f;
+      z-index: 1;
+    }
+    .main-content
+    {
+      margin-left: 0;
+      padding: 15px;
+    }
+    .story-container
+    {
+      flex-direction: column;
+      gap: 30px;
+      max-width: 100%;
+      align-items: center;
+    }
+    .story-images
+    {
+      flex-direction: row;
+      gap: 10px;
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 10px;
+      align-items: flex-end;
+    }
+
+    .story-img
+    {
+      width: 24vw;
+      min-width: 80px;
+      height: 80px;
+      left: 0 !important; /*위에서 계단식 한거 없애려면 넣어야함 안 넣으면 정렬이 안됨*/
+    }
+
+    .story-steps
+    {
+      width: 100%;
+    }
+
+    .story-step
+    {
+      width: 100% !important;
+      margin-left: 0 !important;
+      padding: 12px 6px;
+    }
+
+    .story-title
+    {
+      font-size: 1em;
+    }
+  }
+</style>
+</head>
+<body>
+  <!-- 사이드바 -->
+  <div class="fixed-sidebar">
+    <div class="fixed-group">
+      <article class="notice home-link"><a href="index.html">홈</a></article>
+      <article class="notice"><a href="#">공지사항</a></article>
+      <article class="notice"><a href="#">최신소식</a></article>
+      <article class="notice"><a href="#">인스타그램</a></article>
+      <article class="notice"><a href="#">이벤트 및 알림</a></article>
+      <article class="notice"><a href="#">회사소개</a></article>
+    </div>
+  </div>
+
+  <!-- 메인 콘텐츠 -->
+  <div class="main-content">
+    <div class="story-title">일본 오쇼가츠(お正月) 스토리</div>
+    <div class="story-container">
+      <!-- 왼쪽 4개 이미지 계단식 정렬 -->
+      <div class="story-images">
+        <div class="story-img">
+          <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20151028_136%2Fsiatiger_1446025212721KEzoN_JPEG%2F%25C4%25AB%25B5%25B0%25B8%25B6%25C2%25EA%2528%25DA%25A6%25E1%25E6%253B_%25AA%25AB%25AA%25C9%25AA%25DE%25AA%25C4%2529.jpg&type=a340">
+        </div>
+        <div class="story-img">
+          <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNTAxMDFfMjM4%2FMDAxNzM1NzI3MTI1Mjc4.6YNaUYAUVn3n4BseONruDr67tsTEVfzpQZh1Ezv6tKkg.s_hCHw18IP-ROVqBquNtZq_NfaFlPkDS0liTJ3Xv9Q0g.JPEG%2FIMG_9215.jpg&type=a340">
+        </div>
+        <div class="story-img">
+          <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNjEyMDhfMjkx%2FMDAxNDgxMTYwNjI4ODYy.01FBPKaBF558uzQbiKKBkfHNe5SJIMTJ75Ky8ppj-WQg.QETj3Rvf5qRWKb0oCfEycUQxrKjMii1qYp5GM-WUft0g.JPEG.dymg98%2F%25BB%25E7%25C1%25F8_5.jpg&type=a340">
+        </div>
+        <div class="story-img">
+          <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNjExMjFfMTIy%2FMDAxNDc5NzAxNzA0MTAw.42OGxX5XP3DERKZxFQW4cZMMBNGNa_uU2aq22yGAGBsg.lpWwlLUWWiq6cBlSHnjOwic3HKBehFpzUGkTxH3drIkg.JPEG.januni0422%2F1.jpg&type=a340">
+        </div>
+      </div>
+      <!-- 오른쪽 계단 스토리 -->
+      <div class="story-steps">
+        <div class="story-step">
+          <div class="story-step-title">새해맞이 준비</div>
+          <div class="story-step-desc">
+            12월 말, 일본 가정에서는 오쇼가츠를 맞아 집안을 청소하고, 카도마츠(소나무 장식)와 시메카자리(새해 장식)를 문 앞에 둡니다.
+          </div>
+        </div>
+        <div class="story-step">
+          <div class="story-step-title">제야의 종소리와 첫 해돋이</div>
+          <div class="story-step-desc">
+            12월 31일 밤, 절에서 108번 울리는 제야의 종소리를 들으며 한 해를 마무리하고, 새벽에는 가족과 함께 첫 해돋이(하츠히노데)를 맞이합니다.
+          </div>
+        </div>
+        <div class="story-step">
+          <div class="story-step-title">오세치 요리와 오조니</div>
+          <div class="story-step-desc">
+            오쇼가츠 아침에는 특별한 오세치 요리와 떡국(오조니)을 먹으며, 한 해의 건강과 행복을 기원합니다.
+          </div>
+        </div>
+        <div class="story-step">
+          <div class="story-step-title">하츠모데와 오토시다마</div>
+          <div class="story-step-desc">
+            신사나 절에 참배(하츠모데)를 가고, 아이들은 어른들에게 오토시다마(새해 세뱃돈)를 받으며 기쁨을 나눕니다.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

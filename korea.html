@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>설날 타임아웃</title>
+<style>
+  * 
+  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body 
+  {
+    background: linear-gradient(135deg, #000000 0%, #1a1a40 100%);
+    font-family: "맑은 고딕";
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .fixed-sidebar 
+  {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    padding: 20px;
+    background: linear-gradient(145deg, #2d2d5a 0%, #42428a 100%);
+    border-right: 2px solid #4a4a8f;
+    z-index: 10;
+  }
+
+  .fixed-group 
+  {
+    display: grid;
+    gap: 15px;
+  }
+
+  .notice a 
+  {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    transform-origin: left center;
+  }
+
+  .notice a:hover 
+  {
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+
+  .main-content 
+  {
+    margin-left: 300px;
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .top-image 
+  {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+  }
+
+  .top-image img 
+  {
+    width: 100%;
+    display: block;
+    border-radius: 14px;
+  }
+
+  .timeout-section 
+  {
+    background: rgba(255,255,255,0.08);
+    padding: 30px 25px;
+    border-radius: 14px;
+    border: 1px solid #5a5a9f;
+    max-width: none;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+
+  .timeout-title 
+  {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 18px;
+    text-align: center;
+    color: #ffd700;
+    letter-spacing: 1px;
+  }
+
+  .timeline 
+  {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    margin-top: 18px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+  
+  .timeline-item 
+  {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 260px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .timeline-dot 
+  {
+    min-width: 18px;
+    min-height: 18px;
+    background: linear-gradient(135deg, #ffd700 60%, #ffb700 100%);
+    border-radius: 50%;
+    margin-bottom: 10px;
+    margin-top: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    border: 2px solid #fff;
+  }
+  .timeline-content 
+  {
+    flex: 1;
+  }
+  .timeline-title 
+  {
+    font-weight: bold;
+    color: #ffd700;
+    margin-bottom: 2px;
+    font-size: 1.13em;
+  }
+  .timeline-desc 
+  {
+    color: #f0f0f0;
+    font-size: 1em;
+    line-height: 1.6;
+  }
+  @media (max-width: 768px)
+  {
+    .fixed-sidebar
+    {
+      position: static;
+      width: 100%;
+      height: auto;
+      border-right: none;
+      border-bottom: 2px solid #4a4a8f;
+      z-index: 1;
+    }
+    .main-content
+    {
+      margin-left: 0;
+      padding: 15px;
+    }
+    .top-image,
+    .timeout-section
+    {
+      max-width: 100%;
+    }
+    .timeline
+    {
+      flex-direction: column;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .timeline-item
+    {
+      max-width: 100%;
+      min-width: 0;
+      text-align: left;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+  <!-- 고정 사이드바 -->
+  <div class="fixed-sidebar">
+    <div class="fixed-group">
+      <article class="notice"><a href="index.html">홈으로</a></article>
+      <article class="notice"><a href="#">공지사항</a></article>
+      <article class="notice"><a href="#">최신소식</a></article>
+      <article class="notice"><a href="#">인스타그램</a></article>
+      <article class="notice"><a href="#">이벤트 및 알림</a></article>
+      <article class="notice"><a href="#">회사소개</a></article>
+    </div>
+  </div>
+
+  <!-- 메인 콘텐츠 -->
+  <div class="main-content">
+    <!-- 상단 이미지 -->
+    <div class="top-image">
+      <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNTAxMjlfMjMg%2FMDAxNzM4MTE2MjM4MTQ1.pAzynYBdU_7qzOdCWt1hBLEtwdC2xMUI-dB-lx7DeRog.1Zw8anNE-NQb6V4kkSyrNVp9ZlhR9t4VUW2Xua2-zhYg.JPEG%2F900%25A3%25DFfile%25A3%25ADEuXPpEjDGU4WaVxQGEA9Qi.jpg&type=a340" alt="설날 이미지">
+    </div>
+
+    <!-- 타임아웃(타임라인) 섹션 -->
+    <section class="timeout-section">
+      <div class="timeout-title">설날</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-title">의미와 기원</div>
+            <div class="timeline-desc">설날은 음력 1월 1일로, 새해의 시작을 기념하는 한국의 가장 큰 명절입니다.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-title">대표 풍습</div>
+            <div class="timeline-desc">가족이 모여 차례를 지내고, 어른께 세배를 드리며 덕담과 세뱃돈을 주고받습니다.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-title">전통 음식</div>
+            <div class="timeline-desc">떡국을 먹으며 한 살을 더 먹는 의미를 되새기고, 다양한 명절 음식을 나눕니다.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-title">상징과 의미</div>
+            <div class="timeline-desc">설날은 새로운 시작, 가족의 화합, 조상에 대한 존경을 상징합니다.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
